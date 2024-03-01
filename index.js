@@ -14,8 +14,8 @@ function closeWithGrace (opts, fn) {
   const logger = opts.logger ? opts.logger : console
   process.once('SIGTERM', onSignal)
   process.once('SIGINT', onSignal)
-  process.once('uncaughtException', onError)
-  process.once('unhandledRejection', onError)
+  // process.once('uncaughtException', onError)
+  // process.once('unhandledRejection', onError)
 
   const sleeped = Symbol('sleeped')
 
@@ -84,8 +84,8 @@ function closeWithGrace (opts, fn) {
   async function run (out) {
     process.on('SIGTERM', afterFirstSignal)
     process.on('SIGINT', afterFirstSignal)
-    process.on('uncaughtException', afterFirstError)
-    process.on('unhandledRejection', afterFirstError)
+    // process.on('uncaughtException', afterFirstError)
+    // process.on('unhandledRejection', afterFirstError)
 
     closeWithGrace.closing = true
 
