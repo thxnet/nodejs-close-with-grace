@@ -1,10 +1,7 @@
-'use strict'
+"use strict";
 
-const errorEvents = [
-  'uncaughtException',
-  'unhandledRejection'
-]
+const errorEvents = [];
 
 module.exports = {
-  errorEvents
-}
+  errorEvents,
+};
